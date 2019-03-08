@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="oteltakip" Class="oteltakipDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=oteltakip;Integrated Security=True" SettingsObjectName="oteltakip.Properties.Settings" SettingsPropertyName="oteltakipConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.kullanicihesaplari" Member="kullanicihesaplaris">
+    <Type Name="kullanicihesaplari">
+      <Column Name="kullaniciadi" Type="System.String" DbType="VarChar(20)" IsPrimaryKey="true" CanBeNull="true" />
+      <Column Name="sifre" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.sorusor" Member="sorusors">
+    <Type Name="sorusor">
+      <Column Name="soru" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="cevap" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="sorankisitc" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="cevaplayankisikadi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="soruno" Type="System.String" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.siparistablosu" Member="siparistablosus">
+    <Type Name="siparistablosu">
+      <Column Name="sip_no" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="mustc" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="siparisliste" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="siparis_tutar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="siparis_tarihi" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="onaylayanpersonel" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="teslim_tarihi" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.gmusteriler" Member="gmusterilers">
+    <Type Name="gmusteriler">
+      <Column Name="tckimlikno" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="adi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="soyadi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ceptelefonu" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="cinsiyeti" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="giristarihi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cikistarihi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="odaturu" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="kaldigioda" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="odedigiucret" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="resimi" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="numara" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.kisisayisi" Member="kisisayisis">
+    <Type Name="kisisayisi">
+      <Column Name="kisisayi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.odadurumu" Member="odadurumus">
+    <Type Name="odadurumu">
+      <Column Name="odano" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="odadurumu" Member="odadurumu1" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="odanoo" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="turu" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.rezervasyon" Member="rezervasyon1s">
+    <Type Name="rezervasyon1">
+      <Column Name="r_no" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tckimlik" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="adi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="soyadi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="giristarihi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cikistarihi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ceptel" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="oda__no" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.misafir" Member="misafir1s">
+    <Type Name="misafir1">
+      <Column Name="m_no" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="geldigioda" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="isim" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="soyisim" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="ceptel" Type="System.String" DbType="VarChar(11) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.musterihesaplari" Member="musterihesaplaris">
+    <Type Name="musterihesaplari">
+      <Column Name="kullaniciadi" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="sifre" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="numarasi" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="oda_numarasi" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.temizlik" Member="temizliks">
+    <Type Name="temizlik">
+      <Column Name="tno" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="odano" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="t_tarihi" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.musteriler" Member="musterilers">
+    <Type Name="musteriler">
+      <Column Name="musterino" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tckimlikno" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="adi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="soyadi" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="ceptel" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="giristarihi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cikistarihi" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="odaturu" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="tutar" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="odano" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="bosmu" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="cinsiyet" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="resim" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="anahtar" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="kisisayisi" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
